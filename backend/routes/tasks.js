@@ -4,7 +4,8 @@ const router = express.Router();
 
 router.post("/create", async (req, res) => {
   try {
-    const task = await new Task({ task: req.body }).save();
+    const task = await new Task({ task: req.body.task });
+    task.save();
     res.send(task);
   } catch (error) {
     res.send(error);
