@@ -1,14 +1,14 @@
 const cors = require("cors");
 const express = require("express");
 const app = express();
-// const connection = require("./db");
-// const tasks = require("./routes/tasks");
+const connection = require("./db");
+const tasks = require("./routes/tasks");
 
-// connection();
+connection();
 
-// app.use(cors());
-// app.use(express.json());
-// app.use("/api/tasks", tasks);
+app.use(cors());
+app.use(express.json());
+app.use("/api/tasks", tasks);
 
 const port = process.env.PORT || 8080;
 
