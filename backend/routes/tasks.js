@@ -23,7 +23,7 @@ router.get("/", async (req, res) => {
 
 /* CREATE 'PUT' REQUEST */
 
-router.put("/insert", async (req, res) => {
+router.put("/update", async (req, res) => {
   try {
     await Task.create({ taskString: req.body });
     res.statusCode(200);
