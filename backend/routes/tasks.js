@@ -42,8 +42,7 @@ router.delete("/delete", async (req, res) => {
   id is the id of the deleted item
   */
   try {
-    await Task.deleteOne({ _id: req.body.id });
-    res.statusCode(204);
+    await Task.findOneAndDelete({ id: req.body._id });
     res.send("deleted successfully");
   } catch (error) {
     res.send(error);
