@@ -32,7 +32,6 @@ router.put("/update", async (req, res) => {
         new: true,
       }
     );
-    console.log(task);
     res.send(task);
   } catch (error) {
     res.send(error);
