@@ -25,10 +25,16 @@ router.get("/", async (req, res) => {
 
 router.put("/update", async (req, res) => {
   try {
-    await Task.create({ taskString: req.body });
-    res.statusCode(200);
+    const task = await Task.findOneAndUpdate(
+      { _id: req.body._id },
+      { task: req.body.task },
+      {
+        new: true,
+      }
+    );
+    console.log(task);
+    res.send(task);
   } catch (error) {
-    res.statusCode(400);
     res.send(error);
   }
 });
