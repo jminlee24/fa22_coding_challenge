@@ -21,13 +21,13 @@ const TaskList = () => {
   }, [tasks]);
 
   return (
-    <div className='d-flex flex-column align-items-center pt-2'>
-      <h1 className='text-center'>Tasks</h1>
+    <div className="d-flex flex-column align-items-center pt-2">
+      <h1 className="text-center">Tasks</h1>
       <div>
         {tasks.length ? (
           tasks.map((task) => <Task key={task._id} task={task} />)
         ) : (
-          <p className='pt-5 text-center'>"No Tasks Created"</p>
+          <p className="pt-5 text-center">"No Tasks Created"</p>
         )}
       </div>
     </div>
